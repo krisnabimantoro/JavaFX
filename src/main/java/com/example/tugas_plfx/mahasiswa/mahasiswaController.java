@@ -1,4 +1,4 @@
-package com.example.tugas_plfx;
+package com.example.tugas_plfx.mahasiswa;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -20,7 +20,7 @@ public class mahasiswaController {
     public Label alert;
     ObservableList<String> listFakultas = FXCollections.observableArrayList("Teknik","FISIP","Hukum","Kesehatan","Pendidikan","FEB");
 
-    ObservableList<data> dataMahasiswa = FXCollections.observableArrayList(new data("Krisna Bimantoro","2022","krisna@gmail.com","Teknik","Informatika","Lowokwaru","Malang"));
+    ObservableList<data> dataMahasiswa = FXCollections.observableArrayList();
 
 
     public Button btnCreate;

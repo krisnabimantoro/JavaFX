@@ -1,5 +1,7 @@
-package com.example.tugas_plfx;
+package com.example.tugas_plfx.mahasiswa;
 
+import com.example.tugas_plfx.mahasiswa.mahasiswa;
+import com.example.tugas_plfx.mahasiswa.mahasiswaController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="642.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tugas_plfx.jadwalKuliah.JadwalKuliahController">
+   <children>
+      <TabPane prefHeight="642.0" prefWidth="701.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Jadwal Kuliah">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="610.0" prefWidth="701.0">
+                     <children>
+                        <Label layoutX="274.0" layoutY="14.0" text="Jadwal Kuliah">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="2.0" layoutY="53.0" prefWidth="700.0" />
+                        <GridPane layoutX="83.0" layoutY="341.0" prefHeight="195.0" prefWidth="528.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="338.6666564941406" minWidth="10.0" prefWidth="81.33334350585938" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="610.6666641235352" minWidth="10.0" prefWidth="443.6666564941406" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Nama Dosen :" />
+                              <Label text="Mata Kuliah :" GridPane.rowIndex="1" />
+                              <Label text="GKB :" GridPane.rowIndex="2" />
+                              <Label text="Waktu :" GridPane.rowIndex="3" />
+                              <Label text="Ruangan :" GridPane.rowIndex="4" />
+                              <TextField fx:id="tbDosen" prefWidth="451.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="tbMatkul" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="tbRuangan" prefHeight="29.0" prefWidth="539.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <ComboBox fx:id="cbGkb" prefHeight="25.0" prefWidth="193.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="tbWaktu" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <ButtonBar layoutX="347.0" layoutY="546.0" prefHeight="40.0" prefWidth="200.0">
+                          <buttons>
+                            <Button fx:id="btnCreate" mnemonicParsing="false" onAction="#createAction" text="Create" />
+                              <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#updateAction" text="Update" />
+                              <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteAction" text="Delete" />
+                          </buttons>
+                        </ButtonBar>
+                        <TableView fx:id="tvData" layoutX="83.0" layoutY="67.0" onMouseClicked="#rowClick" prefHeight="262.0" prefWidth="528.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

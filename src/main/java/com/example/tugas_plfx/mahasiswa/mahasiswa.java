@@ -1,4 +1,4 @@
-package com.example.tugas_plfx;
+package com.example.tugas_plfx.mahasiswa;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
