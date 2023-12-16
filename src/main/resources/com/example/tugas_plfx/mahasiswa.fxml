@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tugas_plfx.mahasiswaController">
+   <children>
+      <TabPane layoutY="2.0" prefHeight="375.0" prefWidth="535.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Input Data">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="520.0">
+                     <children>
+                        <Label layoutX="142.0" layoutY="6.0" text="Input Bioadata Mahasiswa">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="-5.0" layoutY="38.0" prefHeight="3.0" prefWidth="507.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="38.0" />
+                        <GridPane layoutX="29.0" layoutY="45.0" prefHeight="246.0" prefWidth="349.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.66665649414062" minWidth="10.0" prefWidth="62.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="395.00000762939453" minWidth="10.0" prefWidth="286.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Nama :">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="tbNama" fx:id="tbNama" prefHeight="29.0" prefWidth="293.0" GridPane.columnIndex="1" />
+                              <Label text="NIM :" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="tbNim" fx:id="tbNim" prefHeight="29.0" prefWidth="292.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Email :" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="tbEmail" fx:id="tbEmail" prefHeight="29.0" prefWidth="291.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Fakultas :" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox id="cbFakukultas" fx:id="cbFakultas" prefHeight="25.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField id="tbAlamat" fx:id="tbAlamat" alignment="TOP_LEFT" prefHeight="57.0" prefWidth="286.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label text="Alamat :" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Kota :" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tbKota" prefHeight="27.0" prefWidth="254.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label text="Jurusan :" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="tbJurusan" fx:id="tbJurusan" prefHeight="29.0" prefWidth="291.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                        <Button fx:id="btnCreate" layoutX="379.0" layoutY="301.0" mnemonicParsing="false" onAction="#onActionCreate" prefHeight="31.0" prefWidth="86.0" text="Create">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                        <Label fx:id="alert" layoutX="92.0" layoutY="293.0" textFill="RED">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Data">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="8.0" text="Bioadata Mahasiswa">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tvData" layoutX="8.0" layoutY="44.0" prefHeight="325.0" prefWidth="491.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
