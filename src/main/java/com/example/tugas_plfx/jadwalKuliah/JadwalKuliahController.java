@@ -21,6 +21,7 @@ public class JadwalKuliahController {
     public Button btnDelete;
     public TableView tvData;
     public TextField tbWaktu;
+    public Label alert;
 
 
     ObservableList<data> dataKuliah = FXCollections.observableArrayList(new data("4","3","4","4","4"));
@@ -37,11 +38,11 @@ public class JadwalKuliahController {
 
 
 
-        TableColumn namaDosen = new TableColumn("Nama");
-        TableColumn matkul = new TableColumn("NIM");
-        TableColumn gkb = new TableColumn("Email");
-        TableColumn waktu = new TableColumn("Fakultas");
-        TableColumn ruangan = new TableColumn("Jurusan");
+        TableColumn namaDosen = new TableColumn("Nama Dosen");
+        TableColumn matkul = new TableColumn("Mata Kuliah");
+        TableColumn gkb = new TableColumn("GKB");
+        TableColumn waktu = new TableColumn("Waktu");
+        TableColumn ruangan = new TableColumn("Ruangan");
 
 
         tvData.getColumns().addAll(namaDosen,matkul,gkb,waktu,ruangan);
@@ -62,6 +63,24 @@ public class JadwalKuliahController {
 
 
     public void createAction(ActionEvent actionEvent) {
+     if (tbDosen.getText().isEmpty()) {
+        alert.setText("Kolom Nama Dosen tidak boleh kososng");
+
+    }else if (tbMatkul.getText().isEmpty()) {
+
+        alert.setText("Kolom Mata Kuliah tidak boleh kososng");
+    }else if (cbGkb.getValue()==null) {
+
+        alert.setText("GKB harus dipilih");
+    }else if (tbWaktu.getText().isEmpty()) {
+
+        alert.setText("Kolom Waktu tidak boleh kososng");
+    }else if (tbRuangan.getText().isEmpty()) {
+
+        alert.setText("Kolom Ruangan tidak boleh kososng");
+    }else
+
+    {
         dataKuliah.add(new data(tbDosen.getText(),tbMatkul.getText(),(String) cbGkb.getValue(),tbWaktu.getText(),tbRuangan.getText()));
         tbDosen.clear();
         tbMatkul.clear();
@@ -69,11 +88,38 @@ public class JadwalKuliahController {
         tbRuangan.clear();
     }
 
+
+
+    }
+
     public void updateAction(ActionEvent actionEvent) {
-    ObservableList<data> currentTable = tvData.getItems();
-    data selectedTable = (data) tvData.getSelectionModel().getSelectedItem();
-    selectedTable.setNamaDosen((tbDosen.getText()));
-    tvData.refresh();
+
+        if (tbDosen.getText().isEmpty()) {
+            alert.setText("Kolom Nama Dosen tidak boleh kososng");
+
+        }else if (tbMatkul.getText().isEmpty()) {
+
+            alert.setText("Kolom Mata Kuliah tidak boleh kososng");
+        }else if (cbGkb.getValue()==null) {
+
+            alert.setText("GKB harus dipilih");
+        }else if (tbWaktu.getText().isEmpty()) {
+
+            alert.setText("Kolom Waktu tidak boleh kososng");
+        }else if (tbRuangan.getText().isEmpty()) {
+
+            alert.setText("Kolom Ruangan tidak boleh kososng");
+        }else {
+            ObservableList<data> currentTable = tvData.getItems();
+            data selectedTable = (data) tvData.getSelectionModel().getSelectedItem();
+            selectedTable.setNamaDosen(tbDosen.getText());
+            selectedTable.setMatkul(tbMatkul.getText());
+            selectedTable.setGkb(String.valueOf(cbGkb.getValue()));
+            selectedTable.setWaktu(tbWaktu.getText());
+            selectedTable.setRuangan(tbRuangan.getText());
+            tvData.refresh();
+        }
+
     }
 
     public void deleteAction(ActionEvent actionEvent) {
@@ -87,6 +133,9 @@ public class JadwalKuliahController {
         data update = (data) tvData.getSelectionModel().getSelectedItem();
         tbDosen.setText(String.valueOf(update.getNamaDosen()));
         tbMatkul.setText(String.valueOf(update.getMatkul()));
+        cbGkb.setValue(update.getGkb());
+        tbWaktu.setText(String.valueOf(update.getWaktu()));
+        tbRuangan.setText(String.valueOf(update.getRuangan()));
     }
 
     public static class data{

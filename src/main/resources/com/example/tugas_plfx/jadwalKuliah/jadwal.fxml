@@ -62,6 +62,7 @@
                           </buttons>
                         </ButtonBar>
                         <TableView fx:id="tvData" layoutX="83.0" layoutY="67.0" onMouseClicked="#rowClick" prefHeight="262.0" prefWidth="528.0" />
+                        <Label fx:id="alert" layoutX="166.0" layoutY="537.0" textFill="RED" />
                      </children>
                   </AnchorPane>
             </content>
